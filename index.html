@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Content Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚀 AI-Powered Content Generator</h1>
+        <p class="subtitle">Powered by Google Gemini API</p>
+      </header>
+
+      <!-- Feature Tabs -->
+      <section class="features-section">
+        <div class="tabs">
+          <button class="tab-btn active" data-feature="ask-anything">
+            Ask Me Anything
+          </button>
+          <button class="tab-btn" data-feature="summarizer">
+            Quick Summarizer
+          </button>
+          <button class="tab-btn" data-feature="idea-spark">Idea Spark</button>
+          <button class="tab-btn" data-feature="definition">
+            Definition Finder
+          </button>
+        </div>
+
+        <!-- Feature 1: Ask Me Anything -->
+        <div id="ask-anything" class="feature-content active">
+          <h2>❓ Ask Me Anything</h2>
+          <p class="feature-description">
+            Ask any question and get instant answers powered by AI.
+          </p>
+          <div class="input-group">
+            <input
+              type="text"
+              id="questionInput"
+              placeholder="What would you like to know?"
+              class="input-field"
+            />
+            <button id="askBtn" class="btn btn-primary">Get Answer</button>
+          </div>
+          <div id="answerOutput" class="output-section hidden">
+            <h3>Answer:</h3>
+            <div id="answerContent" class="output-content"></div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Quick Summarizer -->
+        <div id="summarizer" class="feature-content">
+          <h2>📝 Quick Summarizer</h2>
+          <p class="feature-description">
+            Paste a block of text and get a concise summary in seconds.
+          </p>
+          <div class="input-group">
+            <textarea
+              id="textToSummarize"
+              placeholder="Paste your text here..."
+              class="textarea-field"
+              rows="6"
+            ></textarea>
+            <button id="summarizeBtn" class="btn btn-primary">Summarize</button>
+          </div>
+          <div id="summaryOutput" class="output-section hidden">
+            <h3>Summary:</h3>
+            <div id="summaryContent" class="output-content"></div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Idea Spark -->
+        <div id="idea-spark" class="feature-content">
+          <h2>💡 Idea Spark</h2>
+          <p class="feature-description">
+            Get creative ideas and suggestions based on your topic.
+          </p>
+          <div class="input-group">
+            <input
+              type="text"
+              id="ideaPrompt"
+              placeholder="e.g., 'blog post ideas about JavaScript' or 'creative story prompts'"
+              class="input-field"
+            />
+            <select id="ideaCount" class="select-field">
+              <option value="3">3 Ideas</option>
+              <option value="5" selected>5 Ideas</option>
+              <option value="10">10 Ideas</option>
+            </select>
+            <button id="generateIdeasBtn" class="btn btn-primary">
+              Generate Ideas
+            </button>
+          </div>
+          <div id="ideasOutput" class="output-section hidden">
+            <h3>Generated Ideas:</h3>
+            <div id="ideasContent" class="output-content"></div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Definition Finder -->
+        <div id="definition" class="feature-content">
+          <h2>📚 Definition Finder</h2>
+          <p class="feature-description">
+            Get detailed definitions and explanations of any term.
+          </p>
+          <div class="input-group">
+            <input
+              type="text"
+              id="termInput"
+              placeholder="Enter a term or concept..."
+              class="input-field"
+            />
+            <button id="defineBtn" class="btn btn-primary">
+              Find Definition
+            </button>
+          </div>
+          <div id="definitionOutput" class="output-section hidden">
+            <h3>Definition:</h3>
+            <div id="definitionContent" class="output-content"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Loading & Error States -->
+      <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>AI is thinking...</p>
+      </div>
+
+      <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2024 AI-Powered Content Generator | Built with ES6+ & Gemini API
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
